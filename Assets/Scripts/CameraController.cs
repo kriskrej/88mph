@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class DriftCamera : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     [Serializable]
     public class AdvancedOptions
@@ -16,6 +16,7 @@ public class DriftCamera : MonoBehaviour
     public Transform lookAtTarget;
     public Transform positionTarget;
     public Transform sideView;
+    public Transform disappearingAnimationView;
     public AdvancedOptions advancedOptions;
 
     bool m_ShowingSideView;
@@ -47,5 +48,13 @@ public class DriftCamera : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, positionTarget.position, Time.deltaTime * smoothing);
             transform.LookAt(lookAtTarget);
         }
+    }
+
+    public void SetCameraDisappearingAnimationPosition() {
+        transform.position = disappearingAnimationView.position;
+        transform.rotation = disappearingAnimationView.rotation;
+        advancedOptions.updateCameraInFixedUpdate = false;
+        advancedOptions.updateCameraInUpdate = false;
+        advancedOptions.updateCameraInLateUpdate = false;
     }
 }

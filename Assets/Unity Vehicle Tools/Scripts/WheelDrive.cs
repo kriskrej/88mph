@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System;
 
-[Serializable]
-public enum DriveType
-{
-	RearWheelDrive,
-	FrontWheelDrive,
-	AllWheelDrive
-}
+//[Serializable]
+//public enum DriveType
+//{
+//	RearWheelDrive,
+//	FrontWheelDrive,
+//	AllWheelDrive
+//}
 
 public class WheelDrive : MonoBehaviour
 {
@@ -33,12 +33,10 @@ public class WheelDrive : MonoBehaviour
     private WheelCollider[] m_Wheels;
 
     // Find all the WheelColliders down in the hierarchy.
-	void Start()
-	{
+	void Start() {
 		m_Wheels = GetComponentsInChildren<WheelCollider>();
 
-		for (int i = 0; i < m_Wheels.Length; ++i) 
-		{
+		for (int i = 0; i < m_Wheels.Length; ++i) {
 			var wheel = m_Wheels [i];
 
 			// Create wheel shapes only when needed.
@@ -53,8 +51,7 @@ public class WheelDrive : MonoBehaviour
 	// This is a really simple approach to updating wheels.
 	// We simulate a rear wheel drive car and assume that the car is perfectly symmetric at local zero.
 	// This helps us to figure our which wheels are front ones and which are rear.
-	void Update()
-	{
+	void Update() {
 		m_Wheels[0].ConfigureVehicleSubsteps(criticalSpeed, stepsBelow, stepsAbove);
 
 		float angle = maxAngle * Input.GetAxis("Horizontal");
@@ -62,30 +59,25 @@ public class WheelDrive : MonoBehaviour
 
 		float handBrake = Input.GetKey(KeyCode.X) ? brakeTorque : 0;
 
-		foreach (WheelCollider wheel in m_Wheels)
-		{
+		foreach (WheelCollider wheel in m_Wheels) {
 			// A simple car where front wheels steer while rear ones drive.
 			if (wheel.transform.localPosition.z > 0)
 				wheel.steerAngle = angle;
 
-			if (wheel.transform.localPosition.z < 0)
-			{
+			if (wheel.transform.localPosition.z < 0) {
 				wheel.brakeTorque = handBrake;
 			}
 
-			if (wheel.transform.localPosition.z < 0 && driveType != DriveType.FrontWheelDrive)
-			{
+			if (wheel.transform.localPosition.z < 0 && driveType != DriveType.FrontWheelDrive) {
 				wheel.motorTorque = torque;
 			}
 
-			if (wheel.transform.localPosition.z >= 0 && driveType != DriveType.RearWheelDrive)
-			{
+			if (wheel.transform.localPosition.z >= 0 && driveType != DriveType.RearWheelDrive) {
 				wheel.motorTorque = torque;
 			}
 
 			// Update visual wheels if any.
-			if (wheelShape) 
-			{
+			if (wheelShape) {
 				Quaternion q;
 				Vector3 p;
 				wheel.GetWorldPose (out p, out q);
