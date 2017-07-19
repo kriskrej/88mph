@@ -236,98 +236,6 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
---- !u!1001 &26608740
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -218.20001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 8.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -33.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114002140641178068, guid: 9673efa2118e4be4799a8840228cfd00,
-        type: 2}
-      propertyPath: cameraController
-      value: 
-      objectReference: {fileID: 1052671923}
-    - target: {fileID: 114002140641178068, guid: 9673efa2118e4be4799a8840228cfd00,
-        type: 2}
-      propertyPath: hudController
-      value: 
-      objectReference: {fileID: 1569925330}
-    - target: {fileID: 146248930008926416, guid: 9673efa2118e4be4799a8840228cfd00,
-        type: 2}
-      propertyPath: m_SuspensionSpring.spring
-      value: 27055.564
-      objectReference: {fileID: 0}
-    - target: {fileID: 146248930008926416, guid: 9673efa2118e4be4799a8840228cfd00,
-        type: 2}
-      propertyPath: m_SuspensionSpring.damper
-      value: 4328.89
-      objectReference: {fileID: 0}
-    - target: {fileID: 146669588421168054, guid: 9673efa2118e4be4799a8840228cfd00,
-        type: 2}
-      propertyPath: m_SuspensionSpring.spring
-      value: 37936.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 146669588421168054, guid: 9673efa2118e4be4799a8840228cfd00,
-        type: 2}
-      propertyPath: m_SuspensionSpring.damper
-      value: 6069.818
-      objectReference: {fileID: 0}
-    - target: {fileID: 146956580489635072, guid: 9673efa2118e4be4799a8840228cfd00,
-        type: 2}
-      propertyPath: m_SuspensionSpring.spring
-      value: 37944.438
-      objectReference: {fileID: 0}
-    - target: {fileID: 146956580489635072, guid: 9673efa2118e4be4799a8840228cfd00,
-        type: 2}
-      propertyPath: m_SuspensionSpring.damper
-      value: 6071.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 146395578163524288, guid: 9673efa2118e4be4799a8840228cfd00,
-        type: 2}
-      propertyPath: m_SuspensionSpring.spring
-      value: 27063.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 146395578163524288, guid: 9673efa2118e4be4799a8840228cfd00,
-        type: 2}
-      propertyPath: m_SuspensionSpring.damper
-      value: 4330.1826
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &80158822
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,17 +385,17 @@ Prefab:
 Rigidbody:
   m_PrefabParentObject: {fileID: 54978358624182312, guid: 9673efa2118e4be4799a8840228cfd00,
     type: 2}
-  m_PrefabInternal: {fileID: 26608740}
+  m_PrefabInternal: {fileID: 1953714130}
 --- !u!4 &446334258 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4776824638804992, guid: 9673efa2118e4be4799a8840228cfd00,
     type: 2}
-  m_PrefabInternal: {fileID: 26608740}
+  m_PrefabInternal: {fileID: 1953714130}
 --- !u!4 &482608049 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4402960860362924, guid: 9673efa2118e4be4799a8840228cfd00,
     type: 2}
-  m_PrefabInternal: {fileID: 26608740}
+  m_PrefabInternal: {fileID: 1953714130}
 --- !u!1 &624840795
 GameObject:
   m_ObjectHideFlags: 0
@@ -23042,12 +22950,12 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 4095755595090992, guid: 9673efa2118e4be4799a8840228cfd00,
     type: 2}
-  m_PrefabInternal: {fileID: 26608740}
+  m_PrefabInternal: {fileID: 1953714130}
 --- !u!4 &896669239 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4245252586319182, guid: 9673efa2118e4be4799a8840228cfd00,
     type: 2}
-  m_PrefabInternal: {fileID: 26608740}
+  m_PrefabInternal: {fileID: 1953714130}
 --- !u!1 &970871894
 GameObject:
   m_ObjectHideFlags: 0
@@ -23439,3 +23347,55 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1001 &1953714130
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -218.20001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -33.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840526004989690, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114002140641178068, guid: 9673efa2118e4be4799a8840228cfd00,
+        type: 2}
+      propertyPath: cameraController
+      value: 
+      objectReference: {fileID: 1052671923}
+    - target: {fileID: 114002140641178068, guid: 9673efa2118e4be4799a8840228cfd00,
+        type: 2}
+      propertyPath: hudController
+      value: 
+      objectReference: {fileID: 1569925330}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
+  m_IsPrefabParent: 0
