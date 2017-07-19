@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ProBuilder2.Common;
 
 [Serializable]
@@ -32,7 +33,7 @@ public class CarController : MonoBehaviour
 	[Tooltip("The vehicle's drive type: rear-wheels drive, front-wheels drive or all-wheels drive.")]
 	public DriveType driveType;
 
-    private WheelCollider[] m_Wheels;
+    public WheelCollider[] m_Wheels;
     bool inputDisabled;
     bool disappearing;
 
@@ -40,24 +41,27 @@ public class CarController : MonoBehaviour
     [SerializeField] CameraController cameraController;
     [SerializeField] HUDController hudController;
     [SerializeField] ParticleSystem wheelFlamePrefab;
+    [SerializeField] Collider collider;
+    //[SerializeField] BoxCollider effectTrigger;
     List<ParticleSystem> wheelFlames = new List<ParticleSystem>();
 
     public Vector3 targetVelocity;
 
     // Find all the WheelColliders down in the hierarchy.
 	void Start() {
-		m_Wheels = GetComponentsInChildren<WheelCollider>();
-
-		for (int i = 0; i < m_Wheels.Length; ++i) {
-			var wheel = m_Wheels [i];
-
-			// Create wheel shapes only when needed.
-			if (wheelShape != null)
-			{
-				var ws = Instantiate (wheelShape);
-				ws.transform.parent = wheel.transform;
-			}
-		}
+//		m_Wheels = GetComponentsInChildren<WheelCollider>();
+//
+//		for (int i = 0; i < m_Wheels.Length; ++i) {
+//			var wheel = m_Wheels [i];
+//
+//			// Create wheel shapes only when needed.
+//			if (wheelShape != null) {
+//				var ws = Instantiate(wheelShape);
+//				ws.transform.parent = wheel.transform;
+//			    ws.transform.rotation = Quaternion.Euler(0, 0, 90);
+//			    //wheelColliders.Add(ws.GetComponent<MeshCollider>());
+//			}
+//		}
 	}
 
 	// This is a really simple approach to updating wheels.
@@ -84,6 +88,8 @@ public class CarController : MonoBehaviour
         }
         if(Speed_o_Meter.convertSpeedToMph(rigidbody.velocity.magnitude) >= 80)
             SpawnWheelFlames();
+        else
+            StopWheelFlames();
         if(Speed_o_Meter.convertSpeedToMph(rigidbody.velocity.magnitude) >= 88)
             Disappear();
     }
@@ -126,18 +132,30 @@ public class CarController : MonoBehaviour
         cameraController.SetCameraDisappearingAnimationPosition();
         targetVelocity = rigidbody.velocity*100;
         inputDisabled = true;
+        //collider.isTrigger = true;
+        collider.enabled = false;
         //SpawnWheelFlames();
         Invoke("DestroyCar", 2);
     }
 
     private void SpawnWheelFlames() {
-        if (wheelFlames.Count > 0)
+        if (wheelFlames.Any()) {
+            foreach (var flame in wheelFlames)
+                flame.Play();
             return;
-        foreach (var wheel in m_Wheels) {
-            wheelFlames.Add(Instantiate(wheelFlamePrefab, wheel.transform));
         }
-        foreach (var flame in wheelFlames) {
-            flame.Play();
+        foreach (var wheel in m_Wheels) {
+                var f = Instantiate(wheelFlamePrefab, wheel.transform);
+                wheelFlames.Add(f);
+                f.Play();
+        }
+    }
+
+    void StopWheelFlames() {
+        if (!wheelFlames.Any())
+            return;
+        foreach (var wheelFlame in wheelFlames) {
+            wheelFlame.Stop();
         }
     }
 
@@ -149,4 +167,9 @@ public class CarController : MonoBehaviour
         Destroy(gameObject);
     }
 
+    void OnTriggerEnter(Collider other) {
+        if (!disappearing)
+            return;
+        Debug.Log("Whoom");
+    }
 }
