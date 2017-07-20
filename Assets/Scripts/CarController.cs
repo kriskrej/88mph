@@ -36,6 +36,8 @@ public class CarController : MonoBehaviour
     public WheelCollider[] m_Wheels;
     bool inputDisabled;
     bool disappearing;
+    Vector3 startingPosition;
+    Quaternion startingRotation;
 
     [SerializeField] Rigidbody rigidbody;
     [SerializeField] CameraController cameraController;
@@ -49,6 +51,8 @@ public class CarController : MonoBehaviour
 
     // Find all the WheelColliders down in the hierarchy.
 	void Start() {
+	    startingPosition = transform.position;
+	    startingRotation = transform.rotation;
 //		m_Wheels = GetComponentsInChildren<WheelCollider>();
 //
 //		for (int i = 0; i < m_Wheels.Length; ++i) {
@@ -71,7 +75,13 @@ public class CarController : MonoBehaviour
 	    if (inputDisabled)
 	        return;
 
-		m_Wheels[0].ConfigureVehicleSubsteps(criticalSpeed, stepsBelow, stepsAbove);
+	    if (Input.GetKeyDown(KeyCode.R)) {
+	        transform.position = startingPosition;
+	        transform.rotation = startingRotation;
+	        this.rigidbody.velocity = Vector3.zero;
+	    }
+
+	    m_Wheels[0].ConfigureVehicleSubsteps(criticalSpeed, stepsBelow, stepsAbove);
 
 		float angle = maxAngle * Input.GetAxis("Horizontal");
 		float torque = maxTorque * Input.GetAxis("Vertical");
