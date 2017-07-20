@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb8073ff8f4a4a429186ffc1d1cf98a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedometer: {fileID: 1237009791797990}
+  speedometer: {fileID: 114109522798501908}
   movieBars: {fileID: 1769340409070782}
 --- !u!114 &114567181078391686
 MonoBehaviour:

@@ -26,6 +26,7 @@ MonoBehaviour:
   - pb_GIWorkflowMode
   - pbEdgeSubdivisions
   - pbExtrudeMethod
+  - pbDefaultExportFormat
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y
@@ -36,12 +37,12 @@ MonoBehaviour:
   m_Color_keys: []
   m_Material_keys: []
   m_Bool_values: 00000101010001
-  m_Int_values: 000000000000000000000000000000000100000002000000
+  m_Int_values: 01000000000000000200000001000000040000000200000003000000
   m_Float_values:
   - 0
   - 0
   - 1
-  - 0.2
+  - 2
   m_String_values:
   - Assets/ProCore/ProBuilder/Data/Default Material Palette.asset
   m_Color_values: []

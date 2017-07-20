@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class HUDController : MonoBehaviour {
 
-    [SerializeField] GameObject speedometer;
+    public Speed_o_Meter speedometer;
     [SerializeField] GameObject movieBars;
 
     public void EnableMovieMode(bool enabled) {
-        speedometer.SetActive(!enabled);
+        speedometer.gameObject.SetActive(!enabled);
         movieBars.SetActive(enabled);
     }
 }

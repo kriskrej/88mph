@@ -57,4 +57,8 @@ public class CameraController : MonoBehaviour
         advancedOptions.updateCameraInUpdate = false;
         advancedOptions.updateCameraInLateUpdate = false;
     }
+
+    public void RestartCamera() {
+        advancedOptions.updateCameraInFixedUpdate = true;        
+    }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Speed_o_Meter : MonoBehaviour {
 
-    [SerializeField] Rigidbody measuredBody;
+    public Rigidbody measuredBody;
     [SerializeField] Image needle;
     [SerializeField] Text speedText;
     [SerializeField] SpeedUnits speedUnits;

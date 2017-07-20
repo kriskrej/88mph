@@ -541,7 +541,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1342387351095672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -218.20001, y: 8.5, z: -33.66}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4388699280978532}
@@ -841,6 +841,7 @@ MonoBehaviour:
   - {fileID: 146669588421168054}
   - {fileID: 146956580489635072}
   rigidbody: {fileID: 54978358624182312}
+  camRig: {fileID: 4388699280978532}
   cameraController: {fileID: 0}
   hudController: {fileID: 0}
   wheelFlamePrefab: {fileID: 198592623708459826, guid: d41ab2246dec9d74ab9e796c3d70c83b,
@@ -871,8 +872,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 27055.564
-    damper: 4328.89
+    spring: 27055.553
+    damper: 4328.888
     targetPosition: 0.5
   m_SuspensionDistance: 0.19620001
   m_ForceAppPointDistance: 0.46862644
@@ -900,8 +901,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 27063.64
-    damper: 4330.1826
+    spring: 27063.553
+    damper: 4330.1685
     targetPosition: 0.5
   m_SuspensionDistance: 0.19620001
   m_ForceAppPointDistance: 0.46862644
@@ -929,8 +930,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.8
   m_SuspensionSpring:
-    spring: 37936.36
-    damper: 6069.818
+    spring: 37936.45
+    damper: 6069.8315
     targetPosition: 0.5
   m_SuspensionDistance: 0.1962
   m_ForceAppPointDistance: 0.7173573
@@ -958,8 +959,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.8
   m_SuspensionSpring:
-    spring: 37944.438
-    damper: 6071.11
+    spring: 37944.453
+    damper: 6071.1123
     targetPosition: 0.5
   m_SuspensionDistance: 0.1962
   m_ForceAppPointDistance: 0.6683575

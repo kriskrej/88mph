@@ -40,6 +40,7 @@ public class CarController : MonoBehaviour
     Quaternion startingRotation;
 
     [SerializeField] Rigidbody rigidbody;
+    [SerializeField] Transform camRig;
     [SerializeField] CameraController cameraController;
     [SerializeField] HUDController hudController;
     [SerializeField] ParticleSystem wheelFlamePrefab;
@@ -49,37 +50,36 @@ public class CarController : MonoBehaviour
 
     public Vector3 targetVelocity;
 
-    // Find all the WheelColliders down in the hierarchy.
+    void Awake() {
+        if (cameraController == null) {
+            cameraController = FindObjectOfType<CameraController>();
+            cameraController.lookAtTarget = camRig.GetChild(0);
+            cameraController.positionTarget = camRig.GetChild(1);
+            cameraController.sideView = camRig.GetChild(2);
+            cameraController.disappearingAnimationView = camRig.GetChild(3);
+        }
+        if (hudController == null) {
+            hudController = FindObjectOfType<HUDController>();
+            hudController.speedometer.measuredBody = rigidbody;
+        }
+    }
 	void Start() {
 	    startingPosition = transform.position;
-	    startingRotation = transform.rotation;
-//		m_Wheels = GetComponentsInChildren<WheelCollider>();
-//
-//		for (int i = 0; i < m_Wheels.Length; ++i) {
-//			var wheel = m_Wheels [i];
-//
-//			// Create wheel shapes only when needed.
-//			if (wheelShape != null) {
-//				var ws = Instantiate(wheelShape);
-//				ws.transform.parent = wheel.transform;
-//			    ws.transform.rotation = Quaternion.Euler(0, 0, 90);
-//			    //wheelColliders.Add(ws.GetComponent<MeshCollider>());
-//			}
-//		}
+        startingRotation = transform.rotation;
 	}
 
 	// This is a really simple approach to updating wheels.
 	// We simulate a rear wheel drive car and assume that the car is perfectly symmetric at local zero.
 	// This helps us to figure our which wheels are front ones and which are rear.
 	void Update() {
+	    if (Input.GetKeyDown(KeyCode.R)) {
+	        RestartCar();
+            cameraController.RestartCamera();
+            hudController.EnableMovieMode(false);
+	    }
+
 	    if (inputDisabled)
 	        return;
-
-	    if (Input.GetKeyDown(KeyCode.R)) {
-	        transform.position = startingPosition;
-	        transform.rotation = startingRotation;
-	        this.rigidbody.velocity = Vector3.zero;
-	    }
 
 	    m_Wheels[0].ConfigureVehicleSubsteps(criticalSpeed, stepsBelow, stepsAbove);
 
@@ -102,6 +102,12 @@ public class CarController : MonoBehaviour
             StopWheelFlames();
         if(Speed_o_Meter.convertSpeedToMph(rigidbody.velocity.magnitude) >= 88)
             Disappear();
+    }
+
+    void RestartCar() {
+        transform.position = startingPosition;
+        transform.rotation = startingRotation;
+        this.rigidbody.velocity = Vector3.zero;
     }
 
     private void UpdateWheels(float angle, float handBrake, float torque) {
