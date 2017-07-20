@@ -107,6 +107,7 @@ public class CarController : MonoBehaviour
     void RestartCar() {
         transform.position = startingPosition;
         transform.rotation = startingRotation;
+        UpdateWheels(0, 0, 0);
         this.rigidbody.velocity = Vector3.zero;
     }
 
