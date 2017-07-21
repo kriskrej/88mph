@@ -96,7 +96,7 @@ public class CarController : MonoBehaviour
             rigidbody.velocity = Vector3.MoveTowards(rigidbody.velocity, targetVelocity, 10);
             return;
         }
-        if(Speed_o_Meter.convertSpeedToMph(rigidbody.velocity.magnitude) >= 80)
+        if(Speed_o_Meter.convertSpeedToMph(rigidbody.velocity.magnitude) >= 40)
             SpawnWheelFlames();
         else
             StopWheelFlames();
@@ -165,6 +165,7 @@ public class CarController : MonoBehaviour
         }
         foreach (var wheel in m_Wheels) {
                 var f = Instantiate(wheelFlamePrefab, wheel.transform);
+                f.transform.position = f.transform.position - new Vector3(0, 0.5f, 0);
                 wheelFlames.Add(f);
                 f.Play();
         }

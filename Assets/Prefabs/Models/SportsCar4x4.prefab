@@ -532,7 +532,9 @@ MonoBehaviour:
   stepsBelow: 7
   stepsAbove: 2
   driveType: 2
+  m_Wheels: []
   rigidbody: {fileID: 54088498348304202}
+  camRig: {fileID: 0}
   cameraController: {fileID: 0}
   hudController: {fileID: 0}
   wheelFlamePrefab: {fileID: 198592623708459826, guid: d41ab2246dec9d74ab9e796c3d70c83b,
