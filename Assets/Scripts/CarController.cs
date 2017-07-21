@@ -105,10 +105,12 @@ public class CarController : MonoBehaviour
     }
 
     void RestartCar() {
+        rigidbody.isKinematic = true;
+        rigidbody.velocity = Vector3.zero;
+        UpdateWheels(0, 30000, 0);
         transform.position = startingPosition;
         transform.rotation = startingRotation;
-        UpdateWheels(0, 0, 0);
-        this.rigidbody.velocity = Vector3.zero;
+        rigidbody.isKinematic = false;
     }
 
     private void UpdateWheels(float angle, float handBrake, float torque) {
