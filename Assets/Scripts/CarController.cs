@@ -72,7 +72,7 @@ public class CarController : MonoBehaviour
 	// We simulate a rear wheel drive car and assume that the car is perfectly symmetric at local zero.
 	// This helps us to figure our which wheels are front ones and which are rear.
 	void Update() {
-	    if (Input.GetKeyDown(KeyCode.R)) {
+	    if (Input.GetKeyDown(KeyCode.R) || transform.position.y <= -30) {
 	        RestartCar();
             cameraController.RestartCamera();
             hudController.EnableMovieMode(false);
@@ -96,7 +96,7 @@ public class CarController : MonoBehaviour
             rigidbody.velocity = Vector3.MoveTowards(rigidbody.velocity, targetVelocity, 10);
             return;
         }
-        if(Speed_o_Meter.convertSpeedToMph(rigidbody.velocity.magnitude) >= 40)
+        if(Speed_o_Meter.convertSpeedToMph(rigidbody.velocity.magnitude) >= 80)
             SpawnWheelFlames();
         else
             StopWheelFlames();
