@@ -9,73 +9,73 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1421936090452912}
+  m_RootGameObject: {fileID: 1956796361655924}
   m_IsPrefabParent: 1
---- !u!1 &1421936090452912
+--- !u!1 &1953879661351710
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4880081313302974}
+  - component: {fileID: 4447845366478036}
+  - component: {fileID: 33805207978590300}
+  - component: {fileID: 23556961288299560}
   m_Layer: 0
-  m_Name: DelolanWheelBack
+  m_Name: DelolanWheelFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1999505836087332
+--- !u!1 &1956796361655924
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4634950945650598}
-  - component: {fileID: 33580476218819454}
-  - component: {fileID: 23065974975709856}
+  - component: {fileID: 4939008055563092}
   m_Layer: 0
-  m_Name: Wheel Back
+  m_Name: DelolanWheelFrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4634950945650598
+--- !u!4 &4447845366478036
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1999505836087332}
-  m_LocalRotation: {x: -0.50000006, y: -0.5, z: 0.5, w: 0.50000006}
+  m_GameObject: {fileID: 1953879661351710}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 72.95924, y: 72.95924, z: 114.51267}
+  m_LocalScale: {x: 65, y: 65, z: 60}
   m_Children: []
-  m_Father: {fileID: 4880081313302974}
+  m_Father: {fileID: 4939008055563092}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4880081313302974
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!4 &4939008055563092
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1421936090452912}
+  m_GameObject: {fileID: 1956796361655924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4634950945650598}
+  - {fileID: 4447845366478036}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23065974975709856
+--- !u!23 &23556961288299560
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1999505836087332}
+  m_GameObject: {fileID: 1953879661351710}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -102,10 +102,10 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33580476218819454
+--- !u!33 &33805207978590300
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1999505836087332}
-  m_Mesh: {fileID: 4300004, guid: c85d91fc357c5644c9f974c430e60177, type: 3}
+  m_GameObject: {fileID: 1953879661351710}
+  m_Mesh: {fileID: 4300002, guid: c85d91fc357c5644c9f974c430e60177, type: 3}

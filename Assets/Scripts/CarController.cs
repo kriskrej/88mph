@@ -72,15 +72,15 @@ public class CarController : MonoBehaviour
 	// We simulate a rear wheel drive car and assume that the car is perfectly symmetric at local zero.
 	// This helps us to figure our which wheels are front ones and which are rear.
 	void Update() {
+	    if (inputDisabled)
+	        return;
+
 	    if (Input.GetKeyDown(KeyCode.R) || transform.position.y <= -30) {
 	        RestartCar();
             cameraController.RestartCamera();
             hudController.EnableMovieMode(false);
 	    }
-
-	    if (inputDisabled)
-	        return;
-
+        
 	    m_Wheels[0].ConfigureVehicleSubsteps(criticalSpeed, stepsBelow, stepsAbove);
 
 		float angle = maxAngle * Input.GetAxis("Horizontal");
@@ -105,6 +105,8 @@ public class CarController : MonoBehaviour
     }
 
     void RestartCar() {
+        if (disappearing)
+            return;
         rigidbody.isKinematic = true;
         rigidbody.velocity = Vector3.zero;
         UpdateWheels(0, 30000, 0);
@@ -152,7 +154,6 @@ public class CarController : MonoBehaviour
         targetVelocity = rigidbody.velocity*100;
         inputDisabled = true;
         //collider.isTrigger = true;
-        collider.enabled = false;
         //SpawnWheelFlames();
         Invoke("DestroyCar", 2);
     }
@@ -165,7 +166,7 @@ public class CarController : MonoBehaviour
         }
         foreach (var wheel in m_Wheels) {
                 var f = Instantiate(wheelFlamePrefab, wheel.transform);
-                f.transform.position = f.transform.position - new Vector3(0, 0.5f, 0);
+                //f.transform.position = f.transform.position - new Vector3(0, 0.5f, 0);
                 wheelFlames.Add(f);
                 f.Play();
         }
@@ -191,5 +192,8 @@ public class CarController : MonoBehaviour
         if (!disappearing)
             return;
         Debug.Log("Whoom");
+        collider.enabled = false;
+        CancelInvoke("DestroyCar");
+        DestroyCar();
     }
 }
