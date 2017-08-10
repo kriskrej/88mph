@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 146395578163524288}
   m_Layer: 8
   m_Name: a0l
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 114002140641178068}
   m_Layer: 8
   m_Name: Delolan
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 146956580489635072}
   m_Layer: 8
   m_Name: a1l
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 65981714499700222}
   m_Layer: 0
   m_Name: delolan
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 146248930008926416}
   m_Layer: 8
   m_Name: a0r
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 146669588421168054}
   m_Layer: 8
   m_Name: a1r
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -525,8 +525,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1342387351095672}
-  m_LocalRotation: {x: 0, y: 0.2783206, z: 0, w: 0.96048826}
-  m_LocalPosition: {x: -87.1, y: 11.23, z: 19.9}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -97.44, y: 23.57, z: 29.13}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4388699280978532}
@@ -537,7 +537,7 @@ Transform:
   - {fileID: 4717945776528152}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 32.32, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4876495913695378
 Transform:
   m_ObjectHideFlags: 1
@@ -872,8 +872,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 27055.533
-    damper: 4328.8853
+    spring: 27055.496
+    damper: 4328.8794
     targetPosition: 0.5
   m_SuspensionDistance: 0.19620001
   m_ForceAppPointDistance: 0.46862644
@@ -901,8 +901,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 27063.535
-    damper: 4330.1655
+    spring: 27063.566
+    damper: 4330.171
     targetPosition: 0.5
   m_SuspensionDistance: 0.19620001
   m_ForceAppPointDistance: 0.46862644
@@ -930,11 +930,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.8
   m_SuspensionSpring:
-    spring: 37936.473
-    damper: 6069.8354
+    spring: 37936.434
+    damper: 6069.8296
     targetPosition: 0.5
   m_SuspensionDistance: 0.1962
-  m_ForceAppPointDistance: 0.7173573
+  m_ForceAppPointDistance: 0.7173554
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -959,11 +959,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.8
   m_SuspensionSpring:
-    spring: 37944.46
-    damper: 6071.114
+    spring: 37944.504
+    damper: 6071.1206
     targetPosition: 0.5
   m_SuspensionDistance: 0.1962
-  m_ForceAppPointDistance: 0.6683575
+  m_ForceAppPointDistance: 0.6683594
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
