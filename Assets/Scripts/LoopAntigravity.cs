@@ -4,12 +4,11 @@
 public class LoopAntigravity : MonoBehaviour {
     [SerializeField] Transform loopCenter;
     [SerializeField] float loopGravity = 10f;
-    [SerializeField] float worldGravityFactor = 2f;
+    [SerializeField] float worldGravity = 2f;
     [SerializeField] float accelerationBonusFactor = 2f;
 
     Rigidbody car;
-    bool applyForce = false;
-    Vector3 force = Vector3.zero;
+    bool applyForce;
 
     void Awake() {
         car = FindObjectOfType<CarController>().GetComponent<Rigidbody>();
@@ -43,17 +42,21 @@ public class LoopAntigravity : MonoBehaviour {
     }
 
     void AddAccelerationBonus() {
-        car.AddForce((car.transform.forward + car.transform.up) * accelerationBonusFactor);
+        AddForce(car.transform.forward * accelerationBonusFactor);
     }
 
     private void AddWorldGravity() {
-        car.AddForce(Vector3.down * worldGravityFactor, ForceMode.Acceleration);
+        AddForce(Vector3.down * worldGravity);
     }
 
     private void AddLoopGravity() {
         var directionY = car.transform.position.y - loopCenter.position.y;
         var directionZ = car.transform.position.z - loopCenter.position.z;
-        car.AddForce(new Vector3(0f, directionY, directionZ).normalized * loopGravity, ForceMode.Acceleration);
+        AddForce(new Vector3(0f, directionY, directionZ).normalized * loopGravity);
+    }
+
+    void AddForce(Vector3 force) {
+        car.AddForce(force, ForceMode.Acceleration);
     }
 
     bool ColliderIsPlayer(Collider other) {
