@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class MakOfSpeed : MonoBehaviour {
 
-    public Rigidbody measuredBody;
     [SerializeField] private float speedFactor = 1.2f;
 
-    void OnTriggerEnter() {
-        measuredBody.velocity = measuredBody.velocity*speedFactor;
+    void OnTriggerEnter(Collider c) {
+        var rb = c.attachedRigidbody;
+        if (rb.CompareTag("Player")) {
+            rb.velocity = rb.velocity * speedFactor;
+        }
     }
 	
 }

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class MarkOfJump : MonoBehaviour {
 
-    public Rigidbody measuredBody;
     [SerializeField] private float jumpFactor = 1.2f;
 
-    void OnTriggerEnter() {
-        measuredBody.velocity = measuredBody.velocity + new Vector3(0,jumpFactor,0);
+    void OnTriggerEnter(Collider c) {
+        var rb = c.attachedRigidbody;
+        if (rb.CompareTag("Player")) {
+            rb.velocity = rb.velocity + new Vector3(0,jumpFactor,0);
+        }
     }
 	
 }
