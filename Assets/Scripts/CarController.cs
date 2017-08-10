@@ -153,6 +153,7 @@ public class CarController : MonoBehaviour
         cameraController.SetCameraDisappearingAnimationPosition();
         targetVelocity = rigidbody.velocity*100;
         inputDisabled = true;
+        //collider.enabled = false;
         //collider.isTrigger = true;
         //SpawnWheelFlames();
         Invoke("DestroyCar", 2);
@@ -193,7 +194,7 @@ public class CarController : MonoBehaviour
             return;
         Debug.Log("Whoom");
         collider.enabled = false;
-        CancelInvoke("DestroyCar");
-        DestroyCar();
+//        CancelInvoke("DestroyCar");
+//        DestroyCar();
     }
 }

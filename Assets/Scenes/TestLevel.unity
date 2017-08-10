@@ -796,6 +796,46 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 146956580489635072, guid: 9673efa2118e4be4799a8840228cfd00,
+        type: 2}
+      propertyPath: m_SuspensionSpring.spring
+      value: 37944.453
+      objectReference: {fileID: 0}
+    - target: {fileID: 146956580489635072, guid: 9673efa2118e4be4799a8840228cfd00,
+        type: 2}
+      propertyPath: m_SuspensionSpring.damper
+      value: 6071.1123
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248930008926416, guid: 9673efa2118e4be4799a8840228cfd00,
+        type: 2}
+      propertyPath: m_SuspensionSpring.spring
+      value: 27055.553
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248930008926416, guid: 9673efa2118e4be4799a8840228cfd00,
+        type: 2}
+      propertyPath: m_SuspensionSpring.damper
+      value: 4328.888
+      objectReference: {fileID: 0}
+    - target: {fileID: 146669588421168054, guid: 9673efa2118e4be4799a8840228cfd00,
+        type: 2}
+      propertyPath: m_SuspensionSpring.spring
+      value: 37936.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 146669588421168054, guid: 9673efa2118e4be4799a8840228cfd00,
+        type: 2}
+      propertyPath: m_SuspensionSpring.damper
+      value: 6069.8315
+      objectReference: {fileID: 0}
+    - target: {fileID: 146395578163524288, guid: 9673efa2118e4be4799a8840228cfd00,
+        type: 2}
+      propertyPath: m_SuspensionSpring.spring
+      value: 27063.553
+      objectReference: {fileID: 0}
+    - target: {fileID: 146395578163524288, guid: 9673efa2118e4be4799a8840228cfd00,
+        type: 2}
+      propertyPath: m_SuspensionSpring.damper
+      value: 4330.1685
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9673efa2118e4be4799a8840228cfd00, type: 2}
   m_IsPrefabParent: 0
