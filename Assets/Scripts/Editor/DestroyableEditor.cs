@@ -15,15 +15,15 @@ public class DestroyableEditor : Editor {
 
     void AddAllChildren() {
         destroyableFragments = serializedObject.FindProperty("destroyableFragments");
-        foreach (var joint in GetChildren())
-            AddDestroyableFragment(joint);
+        foreach (var child in GetChildren())
+            AddDestroyableFragment(child);
         serializedObject.ApplyModifiedProperties();
     }
 
-    void AddDestroyableFragment(Object joint) {
+    void AddDestroyableFragment(Object fragment) {
         var index = destroyableFragments.arraySize;
         destroyableFragments.InsertArrayElementAtIndex(index);
-        destroyableFragments.GetArrayElementAtIndex(index).objectReferenceValue = joint;
+        destroyableFragments.GetArrayElementAtIndex(index).objectReferenceValue = fragment;
     }
 
     List<GameObject> GetChildren() {
