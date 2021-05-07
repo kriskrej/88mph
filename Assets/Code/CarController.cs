@@ -11,8 +11,10 @@ public enum DriveType
 	AllWheelDrive
 }
 
-public class CarController : MonoBehaviour
-{
+public class CarController : MonoBehaviour {
+    public bool shouldDisappearAt88mph = true;
+    
+    
     [Tooltip("Maximum steering angle of the wheels")]
 	public float maxAngle = 30f;
 	[Tooltip("Maximum torque applied to the driving wheels")]
@@ -102,7 +104,7 @@ public class CarController : MonoBehaviour
             SpawnWheelFlames();
         else
             StopWheelFlames();
-        if(Speed_o_Meter.convertSpeedToMph(rigidbody.velocity.magnitude) >= 88)
+        if(shouldDisappearAt88mph && Speed_o_Meter.convertSpeedToMph(rigidbody.velocity.magnitude) >= 88)
             Disappear();
     }
 
