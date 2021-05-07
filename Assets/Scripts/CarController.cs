@@ -80,7 +80,10 @@ public class CarController : MonoBehaviour
             cameraController.RestartCamera();
             hudController.EnableMovieMode(false);
 	    }
-        
+
+	    if (Input.GetKeyDown(KeyCode.T))
+	        FlipCar();
+	        
 	    m_Wheels[0].ConfigureVehicleSubsteps(criticalSpeed, stepsBelow, stepsAbove);
 
 		float angle = maxAngle * Input.GetAxis("Horizontal");
@@ -102,6 +105,14 @@ public class CarController : MonoBehaviour
             StopWheelFlames();
         if(Speed_o_Meter.convertSpeedToMph(rigidbody.velocity.magnitude) >= 88)
             Disappear();
+    }
+
+    void FlipCar() {
+        var damping = 0.1f;
+        var desiredRotQ = Quaternion.Euler(transform.rotation.eulerAngles.x, 
+            transform.rotation.eulerAngles.y, startingRotation.eulerAngles.z);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotQ, Time.time * damping);
     }
 
     void RestartCar() {
